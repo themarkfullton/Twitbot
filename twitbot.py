@@ -42,7 +42,7 @@ api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
 user = api.me()
 
 # Updates the user's status
-def updateTweet():
+def update_tweet():
     api.update_status('Status update goes here')
     print('Tweet posted')
 
@@ -50,11 +50,11 @@ def updateTweet():
 # then, if the tweets have not already been liked,
 # it will like and retweet them. If not, it will
 # print the error in the console.
-def likeAndRt():
+def like_and_rt():
     search = ("search1", "search2")
-    numberTweets = 5
+    number_tweets = 5
 
-    for tweet in tweepy.Cursor(api.search, search).items(numberTweets):
+    for tweet in tweepy.Cursor(api.search, search).items(number_tweets):
         try:
             tweet.favorite()
             tweet.retweet()
@@ -66,5 +66,5 @@ def likeAndRt():
             break
 
 # Calls the functions defined above
-updateTweet()
-likeAndRt()
+update_tweet()
+like_and_rt()
