@@ -43,7 +43,7 @@ user = api.me()
 
 # Updates the user's status
 def update_tweet():
-    api.update_status('Status update goes here')
+    api.update_status('Message Here')
     print('Tweet posted')
 
 # Searches for tweets based off search criteria,
@@ -51,7 +51,7 @@ def update_tweet():
 # it will like and retweet them. If not, it will
 # print the error in the console.
 def like_and_rt():
-    search = ("search1", "search2")
+    search = ("Python", "Programming")
     number_tweets = 5
 
     for tweet in tweepy.Cursor(api.search, search).items(number_tweets):
@@ -66,5 +66,5 @@ def like_and_rt():
             break
 
 # Calls the functions defined above
-update_tweet()
+# update_tweet()
 like_and_rt()
